@@ -1,0 +1,810 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Digital Controllers Documentation Hub - an open-source ATC/C2 documentation project by DCS controllers, for DCS controllers.">
+      
+      
+      
+        <link rel="canonical" href="https://digital-controllers.com/ground/departure_clearance/">
+      
+      
+        <link rel="prev" href="../flight_plan/">
+      
+      
+        <link rel="next" href="../taxi/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.1, mkdocs-material-9.1.21">
+    
+    
+      
+        <title>Departure Clearance - Digital Controllers</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.eebd395e.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ecc896b0.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+      
+        <meta  property="og:type"  content="website" >
+      
+        <meta  property="og:title"  content="Departure Clearance - Digital Controllers" >
+      
+        <meta  property="og:description"  content="Digital Controllers Documentation Hub - an open-source ATC/C2 documentation project by DCS controllers, for DCS controllers." >
+      
+        <meta  property="og:image"  content="https://digital-controllers.com/assets/images/social/ground/departure_clearance.png" >
+      
+        <meta  property="og:image:type"  content="image/png" >
+      
+        <meta  property="og:image:width"  content="1200" >
+      
+        <meta  property="og:image:height"  content="630" >
+      
+        <meta  property="og:url"  content="https://digital-controllers.com/ground/departure_clearance/" >
+      
+        <meta  name="twitter:card"  content="summary_large_image" >
+      
+        <meta  name="twitter:title"  content="Departure Clearance - Digital Controllers" >
+      
+        <meta  name="twitter:description"  content="Digital Controllers Documentation Hub - an open-source ATC/C2 documentation project by DCS controllers, for DCS controllers." >
+      
+        <meta  name="twitter:image"  content="https://digital-controllers.com/assets/images/social/ground/departure_clearance.png" >
+      
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#simplified-clearance" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Digital Controllers" class="md-header__button md-logo" aria-label="Digital Controllers" data-md-component="logo">
+      
+  <img src="../../assets/logo.webp" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Digital Controllers
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Departure Clearance
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+            
+              <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+              </label>
+            
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+            
+              <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+              </label>
+            
+          
+        </form>
+      
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Digital Controllers" class="md-nav__button md-logo" aria-label="Digital Controllers" data-md-component="logo">
+      
+  <img src="../../assets/logo.webp" alt="logo">
+
+    </a>
+    Digital Controllers
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Welcome
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contributing/" class="md-nav__link">
+        Contributing
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../publications/" class="md-nav__link">
+        Publications
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../general-knowledge/">General Knowledge</a>
+          
+            <label for="__nav_4">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          General Knowledge
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../general-knowledge/radiotelephony/" class="md-nav__link">
+        Radiotelephony
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../general-knowledge/radio_theory/" class="md-nav__link">
+        Radio Theory
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../general-knowledge/radar_theory/" class="md-nav__link">
+        Radar Theory
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../general-knowledge/altimetry/" class="md-nav__link">
+        Altimetry
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../general-knowledge/meteorology/" class="md-nav__link">
+        Meteorology
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../general-knowledge/flight_rules/" class="md-nav__link">
+        Flight Rules
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../">Ground Control</a>
+          
+            <label for="__nav_5">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Ground Control
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../flight_plan/" class="md-nav__link">
+        Flight Plan
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Departure Clearance
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Departure Clearance
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#simplified-clearance" class="md-nav__link">
+    Simplified Clearance
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vfr-clearance" class="md-nav__link">
+    VFR Clearance
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ifr-clearance" class="md-nav__link">
+    IFR Clearance
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../taxi/" class="md-nav__link">
+        Taxi
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../traffic_management/" class="md-nav__link">
+        Traffic Management
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+      
+      
+        
+          
+            
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../pilot-guide/">Pilot Guide</a>
+          
+            <label for="__nav_6">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Pilot Guide
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pilot-guide/dcs_mode_3_squawk/" class="md-nav__link">
+        SQUAWK and Mode 3 Transponder Operation
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#simplified-clearance" class="md-nav__link">
+    Simplified Clearance
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vfr-clearance" class="md-nav__link">
+    VFR Clearance
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ifr-clearance" class="md-nav__link">
+    IFR Clearance
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>Departure Clearance</h1>
+
+<p>A departure clearance is a set of instructions given by air traffic control to a pilot determining the path they will need to follow after takeoff.The issuing of departure clearances is one of the duties of the Ground controller. Busier airports may staff a dedicated Clearance/Delivery controller which will focus purely on the issueing of clearances.</p>
+<h2 id="simplified-clearance">Simplified Clearance</h2>
+<p>There may be occasions in which a simple departure clearance, often just a departure heading and altitude level, will be assigned to pilots. </p>
+<div class="admonition example simplified example">
+<p class="admonition-title">Example</p>
+</div>
+<p>Pilot: "Anapa Ground, Fastjet 345, [single/<em>number</em>] [aircraft type] at [apron/ramp name], ready to taxi."
+Tower: "Fastjet 345, Anapa Ground, after departure fly runway heading, climb to 3000 feet, [QNH1013 HPa/Altimeter 29.92]."
+Pilot: "After departure fly runway heading, climb to 3000 feet [QNH1013 HPa/Altimeter 29.92], Fastjet 345."
+Tower: "Fastjet 345, readback correct, taxi to [...]."</p>
+<p>If ATIS is available, the pilot <strong>SHALL</strong> include the information designator in his initial communication to the ground controller.</p>
+<div class="admonition example initial comms with atis available">
+<p class="admonition-title">Example</p>
+</div>
+<p>Pilot: "Anapa Ground, Fastjet 345, [single/<em>number</em>] [aircraft type] at [apron/ramp name], ready to taxi, information Alpha."</p>
+<h2 id="vfr-clearance">VFR Clearance</h2>
+<p>Visual Flight Rules clearances <strong>MUST</strong> only be issued during daytime and within Visual Meteorological (VMC) conditions. Clearances <strong>SHOULD</strong> include instructions of exiting the airfield control zone. This may consist of a departure heading or a Visual Reference Point, if a VFR chart is available for that airfield. </p>
+<div class="admonition example vfr example with vrp">
+<p class="admonition-title">Example</p>
+</div>
+<p>Pilot: "Anapa Ground, Fastjet 345, [single/<em>number</em>] [aircraft type] at [apron/ramp name], VFR flight to Krymsk, ready to taxi."
+Tower: "Fastjet 345, Anapa Ground, after departure cleared to leave control zone via Entry/Exit East, not above 2500 feet, [QNH1013 HPa/Altimeter 29.92], squawk 1234."
+Pilot: After departure cleared to leave control zone via Entry/Exit East, not above 2500 feet, [QNH1013 HPa/Altimeter 29.92], squawk 1234, Fastjet 345."
+Tower: "Fastjet 345, readback correct, taxi to [...]."</p>
+<p>If charts are not available, a heading may be used.</p>
+<div class="admonition example vfr example with departure heading">
+<p class="admonition-title">Example</p>
+</div>
+<p>[...]
+Tower: "Fastjet 345, Anapa Ground, after departure cleared to leave control zone, fly heading 080, climb to 2000 feet, [QNH1013 HPa/Altimeter 29.92], squawk 4567."
+[...]</p>
+<p>For VFR (and simplified) clearances, the Ground controller <strong>MAY</strong> opt to give departure clearance at the holding point, right before takeoff.</p>
+<div class="admonition example clearance at holding point">
+<p class="admonition-title">Example</p>
+</div>
+<p>Pilot: "Anapa Ground, Fastjet 345, [single/<em>number</em>] [aircraft type] at [apron/ramp name], VFR flight to Krymsk, ready to taxi."
+Tower: "Fastjet 345, Anapa Ground, taxi to [...], expect clearance at holding point."
+Pilot: "Taxi to [...], expect clearance at holding point, Fastjet 345."
+At holding point: 
+Pilot: "Anapa Ground, Fastjet 345, holding at/short of [location]."
+Tower: "Fastjet 345, advise ready to copy clearance."
+Pilot: "Ready to copy, Fastjet 345."
+Tower: "Fastjet 345, Anapa Ground, after departure [...]"
+Pilot: "After departure [...], Fastjet 345."</p>
+<h2 id="ifr-clearance">IFR Clearance</h2>
+<p>IFR flights will be given predefined departure routes called Standard Instrument Departures (SIDs), if available. The alternative is radar vectoring provided by the area controller after departing the airfield control zone. </p>
+<p>IFR clearances <strong>MUST</strong> be delivered in a standardised format. A good mnemonic for remembering it is CRAFT.</p>
+<ul>
+<li><strong>C</strong>learance: Point to which the clearance is valid. This may be a destination airfield, or perhaps an Operating Area, where the aircraft will be handed to tactical air control.</li>
+<li><strong>R</strong>oute: Path that the aircraft will take to depart the airfield. May be vectors, or a predefined Standard Instrument Departure.</li>
+<li><strong>A</strong>ltitude: Maximum altitude to which the aircraft is cleared. This may be lower than the altitude levels defined by the SID, if necessary for traffic spacing.</li>
+<li><strong>F</strong>requency: Frequency the aircraft must switch to when requested by the tower controller. Under ICAO procedures this is often omitted.</li>
+<li><strong>T</strong>ransponder: Mode 3 squawk code that the aircraft should set into its transponder.</li>
+</ul>
+<div class="admonition example ifr clearance example">
+<p class="admonition-title">Example</p>
+</div>
+<p>Pilot: "Krasnodar Ground, Fastjet 345, [single/<em>number</em>] [aircraft type] at [apron/ramp name], request clearance to Sochi, IFR."
+Tower: "Fastjet 345, Krasnodar Ground, advise ready to copy IFR clearance."
+Pilot: "Ready to copy, Fastjet 345."
+Tower: "Fastjet 345, cleared to Sochi, RANIS6T departure, climb to flight level 170, squawk 1234."
+Pilot: "Cleared to Sochi, RANIS6T departure, climb to flight level 170, squawk 1234, Fastjet 345."
+Tower: "Fastjet 345, readback correct, report ready to taxi."</p>
+<p>A radar vector departure is as follows.  </p>
+<div class="admonition example departure via vectors">
+<p class="admonition-title">Example</p>
+</div>
+<p>[...]
+Tower: "Fastjet 345, cleared to Sochi, departure via radar vectors, climb to 5000 feet, [QNH1013 HPa/Altimeter 29.92], squawk 1234."
+Pilot: "cleared to Sochi, departure via radar vectors, climb to 5000 feet, [QNH1013 HPa/Altimeter 29.92], squawk 1234, Fastjet 345."
+Tower: "Fastjet 345, readback correct, report ready to taxi."</p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.indexes", "content.tabs.link"], "search": "../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.220ee61c.min.js"></script>
+      
+    
+  </body>
+</html>
